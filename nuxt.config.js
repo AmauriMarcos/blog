@@ -5,6 +5,11 @@ export default {
   ** See https://nuxtjs.org/api/configuration-mode
   */
   mode: 'universal',
+
+  serverMiddleware: [
+    {path: '/api', handler:'~/api/index.js'}
+  ],
+  
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
