@@ -1,4 +1,5 @@
 
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -6,10 +7,8 @@ export default {
   */
   mode: 'universal',
 
-  serverMiddleware: [
-    {path: '/api', handler:'~/api/index.js'}
-  ],
-  
+  serverMiddleware: ['~/api/index.js'],
+
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -51,6 +50,26 @@ export default {
   */
   buildModules: [
   ],
+
+  modules: [
+    '@nuxtjs/axios',
+    /* '@nuxtjs/proxy' */
+  ],
+
+ /*  proxy: {
+    '/api': {
+      target: 'http://localhost:3000',
+      pathRewrite: {
+        '^/api' : '/'
+        }
+      }
+  }, */
+
+  axios: {
+    baseURL: 'http://localhost:3000', 
+  },
+    
+  
   /*
   ** Nuxt.js modules
   */
